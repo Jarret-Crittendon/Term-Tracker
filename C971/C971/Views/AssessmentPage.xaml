@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C971.Views.AssessmentPage"
+             Title="Assessments">
+
+    <Grid
+        Padding="5"
+        RowSpacing="5"
+        RowDefinitions="*, 50, 50"
+        ColumnDefinitions="*">
+        
+        <ListView
+            Grid.Row="0"
+            Grid.Column="0"
+            x:Name="listAssessments"
+            BackgroundColor="Transparent"
+            SeparatorColor="Black"
+            RowHeight="60"
+            ItemSelected="listAssessments_ItemSelected"
+            ItemTapped="listAssessments_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell
+                        Text="{Binding Name}"                    
+                        Detail="{Binding DetailDate}">
+                    </TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button
+            Grid.Row="1"
+            Grid.Column="0"
+            x:Name="btnAdd"
+            Text="Add Assessment"
+            Clicked="btnAdd_Clicked">
+        </Button>
+        <Button
+            Grid.Row="2"
+            Grid.Column="0"
+            x:Name="btnReturn"
+            Text="Return"
+            Clicked="btnReturn_Clicked">
+        </Button>
+    </Grid>
+
+</ContentPage>

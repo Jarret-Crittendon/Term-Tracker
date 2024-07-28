@@ -1,0 +1,1 @@
+D:\Documents\wgu\C971 - Mobile Application Development Using C#\C971\C971\C971.csproj;x64

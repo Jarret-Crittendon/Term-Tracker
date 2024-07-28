@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="C971.Views.EditTermPage"
+             Title="Edit Term">
+
+    <Grid
+        Padding="5"
+        RowSpacing="5"
+        RowDefinitions="*, 50, 50, 50"
+        ColumnDefinitions="*">
+        
+    
+        <VerticalStackLayout
+        Spacing="10"
+        Margin="20, 20, 20, 0"
+        Grid.Row="0"
+        Grid.Column="0">
+
+            <Frame
+                Padding="10, 2, 10, 2">
+                <HorizontalStackLayout>
+                    <Label
+                        Text="Title"
+                        VerticalOptions="Center"
+                        WidthRequest="80"
+                    >
+                    </Label>
+                    <Entry
+                        x:Name="entryTitle"
+                        VerticalOptions="Center"
+                    >
+                        <Entry.Behaviors>
+                            <toolkit:TextValidationBehavior
+                                x:Name="titleValidator"
+                                MinimumLength="1"
+                                Flags="ValidateOnAttaching,ValidateOnValueChanged"
+                            />
+                        </Entry.Behaviors>
+                    </Entry>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame
+                Padding="10, 2, 10, 2">
+                <HorizontalStackLayout>
+                    <Label
+                        Text="Start Date"
+                        VerticalOptions="Center"
+                        WidthRequest="80">
+                    </Label>
+                    <DatePicker
+                        x:Name="dateStart"
+                        Height="30"
+                        VerticalOptions="Center"
+                        Date="2024/01/01">
+                        <DatePicker.Behaviors>
+                        
+                        </DatePicker.Behaviors>
+                    </DatePicker>
+
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame
+                Padding="10, 2, 10, 2">
+                <HorizontalStackLayout>
+                    <Label
+                        Text="End Date"
+                        VerticalOptions="Center"
+                        WidthRequest="80">  
+                    </Label>
+                    <DatePicker
+                        x:Name="dateEnd"
+                        Height="30"
+                        VerticalOptions="Center"
+                        Date="2024/02/01" /> 
+
+                </HorizontalStackLayout>
+            </Frame>
+            <Button
+                x:Name="btnCourses"
+                Text="Courses"
+                Clicked="btnCourses_Clicked">
+            </Button>
+        </VerticalStackLayout>
+        <Button
+            Grid.Row="1"
+            Grid.Column="0"
+            x:Name="btnSave"
+            Text="Save"
+            Clicked="btnSave_Clicked">
+        </Button>
+        <Button
+            Grid.Row="2"
+            Grid.Column="0"
+            x:Name="btnDelete"
+            Text="Delete"
+            Clicked="btnDelete_Clicked">
+        </Button>
+        <Button
+            Grid.Row="3"
+            Grid.Column="0"
+            x:Name="btnCancel"
+            Text="Cancel"
+            Clicked="btnCancel_Clicked">
+        </Button>
+    </Grid>
+</ContentPage>

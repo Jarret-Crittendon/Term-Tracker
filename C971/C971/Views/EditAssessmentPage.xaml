@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="C971.Views.EditAssessmentPage"
+             Title="Edit Assessment">
+
+    <Grid
+        Padding="5"
+        RowSpacing="5"
+        RowDefinitions="*, 50, 50, 50, 50"
+        ColumnDefinitions="*">
+
+        <VerticalStackLayout
+            Spacing="10"
+            Margin="20, 20, 20, 0"
+            Grid.Row="0"
+            Grid.Column="0">
+
+            <Frame
+                Padding="10, 2, 10, 2">
+                <HorizontalStackLayout>
+                    <Label
+                        Text="Name"
+                        VerticalOptions="Center"
+                        WidthRequest="80">
+                    </Label>
+                    <Entry
+                        x:Name="entryName"
+                        VerticalOptions="Center">
+                        <Entry.Behaviors>
+                            <toolkit:TextValidationBehavior
+                                x:Name="nameValidator"
+                                MinimumLength="1"
+                                Flags="ValidateOnAttaching,ValidateOnValueChanged"
+                                toolkit:MultiValidationBehavior.Error="Name is required."/>
+                        </Entry.Behaviors>
+                    </Entry>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame
+                Padding="10, 2, 10, 2">
+                <HorizontalStackLayout>
+                    <Label
+                        Text="Start Date"
+                        VerticalOptions="Center"
+                        WidthRequest="100">
+                    </Label>
+                    <DatePicker
+                        x:Name="dateStart"
+                        VerticalOptions="Center"
+                        Date="2024/01/01">
+                        <DatePicker.Behaviors>
+
+                        </DatePicker.Behaviors>
+                    </DatePicker>
+
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame
+                Padding="10, 2, 10, 2">
+                <HorizontalStackLayout>
+                    <Label
+                        Text="End Date"
+                        VerticalOptions="Center"
+                        WidthRequest="100">
+                    </Label>
+                    <DatePicker
+                        x:Name="dateEnd"
+                        VerticalOptions="Center"
+                        Date="2024/02/01" />
+
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame
+                Padding="10, 2, 10, 2">
+                <HorizontalStackLayout>
+                    <Label
+                        Text="Assessment Type"
+                        VerticalOptions="Center"
+                        WidthRequest="100">
+                    </Label>
+                    <Picker
+                        x:Name="pickerType"
+                        Title="Assessment Type">
+                    </Picker>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame
+                Padding="10, 2, 10, 2">
+                <HorizontalStackLayout>
+                    <Label
+                        Text="Notify on course start"
+                        VerticalOptions="Center"
+                        WidthRequest="150">
+                    </Label>
+                    <CheckBox
+                        x:Name="checkboxNotifyStart"
+                        VerticalOptions="Center">
+                    </CheckBox>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame
+                Padding="10, 2, 10, 2">
+                <HorizontalStackLayout>
+                    <Label
+                        Text="Notify on course end"
+                        VerticalOptions="Center"
+                        WidthRequest="150">
+                    </Label>
+                    <CheckBox
+                        x:Name="checkboxNotifyEnd"
+                        VerticalOptions="Center">
+                    </CheckBox>
+                </HorizontalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+
+        <Button
+            Grid.Row="2"
+            Grid.Column="0"
+            x:Name="btnSave"
+            Text="Save"
+            Clicked="btnSave_Clicked">
+        </Button>
+
+        <Button
+            Grid.Row="3"
+            Grid.Column="0"
+            x:Name="btnDelete"
+            Text="Delete"
+            Clicked="btnDelete_Clicked">
+        </Button>
+
+        <Button
+            Grid.Row="4"
+            Grid.Column="0"
+            x:Name="btnCancel"
+            Text="Cancel"
+            Clicked="btnCancel_Clicked">
+        </Button>
+    </Grid>
+
+</ContentPage>
